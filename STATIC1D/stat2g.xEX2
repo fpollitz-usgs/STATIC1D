@@ -1,0 +1,111 @@
+cp latlon.inworld latlon.inDEF
+
+cp earth.modelPREM earth.model_stat
+nice stat0A << ! > /dev/null
+1 200
+50.5 0.0
+0.
+!
+nice stat2gA < stat2g.in_SUM1Dgr > /dev/null
+mv stat2g.out stat2g.out_SUMgrn1Dgr
+nice stat2gA < stat2g.in_SUM2Agr > /dev/null
+mv stat2g.out stat2g.out_SUMgrn2Agr
+nice stat2gA < stat2g.in_SUM2Bgr > /dev/null
+mv stat2g.out stat2g.out_SUMgrn2Bgr
+nice stat2gA < stat2g.in_SUM2Cgr > /dev/null
+mv stat2g.out stat2g.out_SUMgrn2Cgr
+nice stat2gA < stat2g.in_SUM2Dgr > /dev/null
+mv stat2g.out stat2g.out_SUMgrn2Dgr
+nice stat2gA < stat2g.in_SUM3dsgr > /dev/null
+mv stat2g.out stat2g.out_SUMgrn3dsgr
+nice stat2gA < stat2g.in_SUM3ssgr > /dev/null
+mv stat2g.out stat2g.out_SUMgrn3ssgr
+nice stat2gA < stat2g.in_SUM4Adsgr > /dev/null
+mv stat2g.out stat2g.out_SUMgrn4Adsgr
+nice stat2gA < stat2g.in_SUM4Assgr > /dev/null
+mv stat2g.out stat2g.out_SUMgrn4Assgr
+nice stat2gA < stat2g.in_SUM4Bdsgr > /dev/null
+mv stat2g.out stat2g.out_SUMgrn4Bdsgr
+nice stat2gA < stat2g.in_SUM4Bssgr > /dev/null
+mv stat2g.out stat2g.out_SUMgrn4Bssgr
+nice stat2gA < stat2g.in_SUM5dsgr > /dev/null
+mv stat2g.out stat2g.out_SUMgrn5dsgr
+nice stat2gA < stat2g.in_SUM6dsgr > /dev/null
+mv stat2g.out stat2g.out_SUMgrn6dsgr
+nice stat2gA < stat2g.in_SUM7dsgr > /dev/null
+mv stat2g.out stat2g.out_SUMgrn7dsgr
+nice stat2gA < stat2g.in_SUM8dsgr > /dev/null
+mv stat2g.out stat2g.out_SUMgrn8dsgr
+
+cp stat2g.out_SUMgrn1Dgr multw2.in
+multw2 << !
+0.3
+!
+mv multw2.out addw2.in1
+cp stat2g.out_SUMgrn2Agr multw2.in
+multw2 << !
+0.6634
+!
+mv multw2.out addw2.in2
+addw2
+mv addw2.out addw2.in1
+cp stat2g.out_SUMgrn2Bgr multw2.in
+multw2 << !
+0.5289
+!
+mv multw2.out addw2.in2
+addw2
+mv addw2.out addw2.in1
+cp stat2g.out_SUMgrn2Cgr multw2.in
+multw2 << !
+0.7963
+!
+mv multw2.out addw2.in2
+addw2
+mv addw2.out addw2.in1
+cp stat2g.out_SUMgrn2Dgr multw2.in
+multw2 << !
+1.6814
+!
+mv multw2.out addw2.in2
+addw2
+mv addw2.out addw2.in1
+cp stat2g.out_SUMgrn4Adsgr multw2.in
+multw2 << !
+1.7164
+!
+mv multw2.out addw2.in2
+addw2
+mv addw2.out addw2.in1
+cp stat2g.out_SUMgrn4Assgr multw2.in
+multw2 << !
+0.7307
+!
+mv multw2.out addw2.in2
+addw2
+mv addw2.out addw2.in1
+cp stat2g.out_SUMgrn5dsgr multw2.in
+multw2 << !
+1.5556
+!
+mv multw2.out addw2.in2
+addw2
+mv addw2.out addw2.in1
+cp stat2g.out_SUMgrn6dsgr multw2.in
+multw2 << !
+1.5556
+!
+mv multw2.out addw2.in2
+addw2
+mv addw2.out addw2.in1
+cp stat2g.out_SUMgrn8dsgr multw2.in
+multw2 << !
+0.8661
+!
+mv multw2.out addw2.in2
+addw2
+mv addw2.out stat2g.out_world
+
+cp stat2g.out_world disph.in
+disph
+paste lonlat.world disph.gmt > disph.gmt_sumatra_co_l=1-200

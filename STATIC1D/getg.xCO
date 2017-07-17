@@ -1,0 +1,32 @@
+awk '{print $2,$1}' mkgrid.out > tmp
+cp stat2g.outCOSEISMIC200 getz.in
+getz
+paste tmp getz.out > getz.outCOSEISMIC200
+cp stat2g.outCOSEISMIC200 getg.in
+getg
+paste tmp getg.out > getg.outCOSEISMIC200
+
+awk '{print $2,$1}' mkgrid.out > tmp
+cp stat2g.outCOSEISMIC150 getz.in
+getz
+paste tmp getz.out > getz.outCOSEISMIC150
+cp stat2g.outCOSEISMIC150 getg.in
+getg
+paste tmp getg.out > getg.outCOSEISMIC150
+
+awk '{print $2,$1}' mkgrid.out > tmp
+cp stat2g.outCOSEISMIC100 getz.in
+getz
+paste tmp getz.out > getz.outCOSEISMIC100
+cp stat2g.outCOSEISMIC100 getg.in
+getg
+paste tmp getg.out > getg.outCOSEISMIC100
+
+awk '{print $2,$1}' mkgrid.out > tmp
+cp stat2g.outCOSEISMIC75 getz.in
+getz
+paste tmp getz.out > getz.outCOSEISMIC75
+cp stat2g.outCOSEISMIC75 getg.in
+getg
+paste tmp getg.out > getg.outCOSEISMIC75
+
